@@ -32,6 +32,7 @@ public class NettyRemotingChannelImpl implements RemotingChannel {
      * 连接对象
      */
     private final Channel channel;
+    private Object credentials;
 
     public NettyRemotingChannelImpl(Channel channel) {
         this.channel = channel;
@@ -40,6 +41,16 @@ public class NettyRemotingChannelImpl implements RemotingChannel {
     @Override
     public String id() {
         return channel.id().asShortText();
+    }
+
+    @Override
+    public Object credentials() {
+        return credentials;
+    }
+
+    @Override
+    public void credentials(Object credentials) {
+        this.credentials = credentials;
     }
 
     @Override

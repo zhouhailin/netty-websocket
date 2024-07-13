@@ -261,19 +261,19 @@ public class NettyRemotingServerImpl extends AbstractRemotingServiceImpl impleme
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
             log.info("Channel {} became active, remote address {}.", ctx.channel(), ctx.channel().remoteAddress());
             remotingChannel = new NettyRemotingChannelImpl(ctx.channel());
-            listenerGroup.onChannelOpened(remotingChannel);
+            publicExecutor.execute(() -> listenerGroup.onChannelOpened(remotingChannel));
         }
 
         @Override
         public void channelInactive(ChannelHandlerContext ctx) throws Exception {
             log.info("Channel {} became inactive, remote address {}.", ctx.channel(), ctx.channel().remoteAddress());
-            listenerGroup.onChannelClosed(remotingChannel);
+            publicExecutor.execute(() -> listenerGroup.onChannelClosed(remotingChannel));
         }
 
         @Override
         public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
             log.info("Close channel {} because of error : ", ctx.channel(), cause);
-            listenerGroup.onChannelException(remotingChannel, cause);
+            publicExecutor.execute(() -> listenerGroup.onChannelException(remotingChannel, cause));
             ctx.channel().close().addListener((ChannelFutureListener) future -> log.warn("Close channel {} because of error {}, result is {}", ctx.channel(), cause, future.isSuccess()));
         }
 

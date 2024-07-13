@@ -17,14 +17,12 @@
 
 package link.thingscloud.netty.remoting.benchmark;
 
-import link.thingscloud.netty.remoting.api.RemotingClient;
 import link.thingscloud.netty.remoting.api.RequestProcessor;
 import link.thingscloud.netty.remoting.api.channel.RemotingChannel;
 import link.thingscloud.netty.remoting.api.command.RemotingCommand;
 import link.thingscloud.netty.remoting.spring.boot.starter.annotation.RemotingRequestProcessor;
 import link.thingscloud.netty.remoting.spring.boot.starter.annotation.RemotingType;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import static link.thingscloud.netty.remoting.RemotingBootstrapFactory.FACTORY;
 

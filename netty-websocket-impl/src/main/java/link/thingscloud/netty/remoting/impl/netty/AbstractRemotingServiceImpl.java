@@ -90,7 +90,7 @@ public abstract class AbstractRemotingServiceImpl implements RemotingService {
     /**
      * Executor to execute RequestProcessor without specific executor.
      */
-    private final ExecutorService publicExecutor;
+    protected final ExecutorService publicExecutor;
     /**
      * Invoke the async handler in this executor when process response.
      */

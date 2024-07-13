@@ -27,8 +27,32 @@ import java.net.SocketAddress;
  */
 public interface RemotingChannel {
 
+    /**
+     * Channel 标识
+     *
+     * @return channel id
+     */
     String id();
 
+    /**
+     * 凭证对象
+     *
+     * @return channel holder
+     */
+    Object credentials();
+
+    /**
+     * 设置凭证信息
+     *
+     * @param credential 凭证信息
+     */
+    void credentials(Object credentials);
+
+    /**
+     * 通道
+     *
+     * @return channel
+     */
     Channel channel();
 
     /**
