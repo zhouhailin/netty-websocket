@@ -1,0 +1,6 @@
+netty:
+  websocket:
+    server:
+      enabled: true
+    client:
+      enabled: true

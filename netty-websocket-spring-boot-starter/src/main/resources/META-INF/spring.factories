@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+link.thingscloud.netty.remoting.spring.boot.starter.config.RemotingClientAutoConfiguration,\
+link.thingscloud.netty.remoting.spring.boot.starter.config.RemotingServerAutoConfiguration

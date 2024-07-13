@@ -1,0 +1,2 @@
+link.thingscloud.netty.remoting.spring.boot.starter.config.RemotingClientAutoConfiguration
+link.thingscloud.netty.remoting.spring.boot.starter.config.RemotingServerAutoConfiguration
